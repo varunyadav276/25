@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Scene 1: The Vault -->
+    <div id="scene-login" class="scene">
+        <p class="hint-text">Enter the password to continue</p>
+        <input type="password" id="password-input" placeholder="Password..." />
+        <button id="login-btn">Done</button>
+        <p id="error-msg" class="hidden error">Incorrect. Try again!</p>
+    </div>
+
+    <!-- Scene 1.5: The Loading Screen -->
+    <div id="scene-loading" class="scene hidden">
+        <h1 id="loading-text">Loading</h1>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
