@@ -95,10 +95,11 @@ button:hover {
 }
 
 /* Stacking the emojis so they look like one unit */
+/* Stacking the images */
 .flame {
     position: absolute;
-    top: -30px;
-    font-size: 40px;
+    top: -35px; /* You might need to tweak this up or down depending on your candle image height */
+    width: 25px; /* Adjust size */
     cursor: pointer;
     z-index: 10;
     transition: opacity 0.3s ease;
@@ -111,22 +112,21 @@ button:hover {
 }
 
 .candle {
-    font-size: 50px;
-    margin-bottom: -20px; 
+    width: 20px;
+    margin-bottom: -15px; /* Pulls the cake up so the candle looks stuck inside it */
     z-index: 5;
 }
 
 .cake {
-    font-size: 80px;
+    width: 150px;
     z-index: 2;
 }
 
 .table {
-    font-size: 100px;
-    margin-top: -35px;
+    width: 220px;
+    margin-top: -40px; /* Pulls the table up so the cake sits on top of it */
     z-index: 1;
 }
-
 .blow-text {
     margin-top: 20px;
     font-size: 20px;
