@@ -59,3 +59,19 @@ if (cycles >= maxCycles) {
             sceneLoading.classList.add('hidden');
             sceneCake.classList.remove('hidden'); 
         }
+
+// Scene 3: Blowing out the candle
+flame.addEventListener('click', () => {
+    // Hide the flame and stop the flicker
+    flame.style.opacity = '0';
+    flame.style.animation = 'none'; 
+    
+    // Change the text
+    blowText.innerText = "Yay! Happy Birthday! 🎉";
+    
+    // Start a 2.5 second timer before moving to the slideshow
+    setTimeout(() => {
+        console.log("Ready for the slideshow!");
+        // We will trigger Scene 4 here next
+    }, 2500);
+});
