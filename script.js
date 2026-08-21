@@ -48,3 +48,6 @@ function startLoadingSequence() {
     }, 400); // The dots update every 400 milliseconds
 }
 
+const sceneCake = document.getElementById('scene-cake');
+const flame = document.getElementById('flame');
+const blowText = document.getElementById('blow-text');
