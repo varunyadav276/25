@@ -158,15 +158,12 @@ button:hover {
     bottom: 0;
     left: 0;
     width: 120px; 
-    transform: translateY(100%);
-    animation: peekIn 1.5s ease-out forwards;
-    animation-delay: 1s; 
+    /* I removed the animation lines temporarily */
 }
-
 #top-right-gif {
     position: absolute;
     top: 20px;
     right: 20px;
     width: 100px; 
-    border-radius: 8px; 
+    border-radius: 0px; 
 }
