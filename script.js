@@ -51,3 +51,11 @@ function startLoadingSequence() {
 const sceneCake = document.getElementById('scene-cake');
 const flame = document.getElementById('flame');
 const blowText = document.getElementById('blow-text');
+
+if (cycles >= maxCycles) {
+            clearInterval(loadingInterval);
+            
+            // Hide loading screen and show the cake screen
+            sceneLoading.classList.add('hidden');
+            sceneCake.classList.remove('hidden'); 
+        }
