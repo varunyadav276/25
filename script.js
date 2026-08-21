@@ -10,7 +10,7 @@ const errorMsg = document.getElementById('error-msg');
 const sceneCake = document.getElementById('scene-cake');
 const flame = document.getElementById('flame');
 const blowText = document.getElementById('blow-text');
-
+const overlayDecorations = document.getElementById('overlay-decorations');
 // Set your custom password here
 const CORRECT_PASSWORD = "iloveyou"; 
 
@@ -50,6 +50,7 @@ function startLoadingSequence() {
             // Hide loading screen and show the cake screen
             sceneLoading.classList.add('hidden');
             sceneCake.classList.remove('hidden'); 
+            overlayDecorations.classList.remove('hidden');
         }
     }, 400); 
 }
@@ -66,6 +67,9 @@ flame.addEventListener('click', () => {
     // Start a 2.5 second timer before moving to the slideshow
     setTimeout(() => {
         console.log("Ready for the slideshow!");
+        overlayDecorations.classList.add('hidden');
+        
+        sceneSlideshow.classList.remove('hidden');
         // We will trigger Scene 4 here next
     }, 2500);
 });
