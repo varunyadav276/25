@@ -143,22 +143,30 @@ button:hover {
 
 /* --- Corner Decorations --- */
 
+#overlay-decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Prevents the invisible box from blocking clicks */
+    z-index: 50; /* Makes sure they sit on top of the background */
+}
+
 #peeking-cat {
-    position: fixed; /* Changed to fixed */
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 120px; 
-    z-index: 10;
     transform: translateY(100%);
     animation: peekIn 1.5s ease-out forwards;
     animation-delay: 1s; 
 }
 
 #top-right-gif {
-    position: fixed; /* Changed to fixed */
+    position: absolute;
     top: 20px;
     right: 20px;
     width: 100px; 
-    z-index: 10;
     border-radius: 8px; 
 }
