@@ -155,10 +155,15 @@ button:hover {
 
 #peeking-cat {
     position: absolute;
-    bottom: 0;
+    bottom: -150px; /* Starts hidden below the edge */
     left: 0;
     width: 120px; 
-    /* I removed the animation lines temporarily */
+    animation: peekIn 1s ease-out forwards;
+    animation-delay: 1s; /* Waits 1 second before popping up */
+}
+
+@keyframes peekIn {
+    to { bottom: 0; } /* Slides up to sit flush with the bottom */
 }
 #top-right-gif {
     position: absolute;
