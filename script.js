@@ -1,16 +1,21 @@
 // script.js
+
+// 1. Grab all our HTML elements
 const loginBtn = document.getElementById('login-btn');
 const passwordInput = document.getElementById('password-input');
 const sceneLogin = document.getElementById('scene-login');
 const sceneLoading = document.getElementById('scene-loading');
 const loadingText = document.getElementById('loading-text');
 const errorMsg = document.getElementById('error-msg');
+const sceneCake = document.getElementById('scene-cake');
+const flame = document.getElementById('flame');
+const blowText = document.getElementById('blow-text');
 
-// Set your custom password here (maybe a special date or inside joke)
+// Set your custom password here
 const CORRECT_PASSWORD = "iloveyou"; 
 
+// 2. Scene 1: The Login Button Click
 loginBtn.addEventListener('click', () => {
-    // Check if the password matches (ignoring capital letters or extra spaces)
     if (passwordInput.value.trim().toLowerCase() === CORRECT_PASSWORD) {
         // Hide login, show loading
         sceneLogin.classList.add('hidden');
@@ -23,6 +28,7 @@ loginBtn.addEventListener('click', () => {
     }
 });
 
+// 3. Scene 1.5: The Loading Animation
 function startLoadingSequence() {
     let dotCount = 0;
     let cycles = 0;
@@ -41,37 +47,14 @@ function startLoadingSequence() {
         if (cycles >= maxCycles) {
             clearInterval(loadingInterval);
             
-            // This is the crucial part that hides the loading text and shows the cake!
+            // Hide loading screen and show the cake screen
             sceneLoading.classList.add('hidden');
             sceneCake.classList.remove('hidden'); 
         }
     }, 400); 
 }
 
-        // Once it finishes loading, stop the interval and trigger Scene 2
-        if (cycles >= maxCycles) {
-            clearInterval(loadingInterval);
-            
-            // Temporary alert until we build Scene 2
-            console.log("Ready for Scene 2!"); 
-            loadingText.innerText = "Complete!";
-        }
-    }, 400); // The dots update every 400 milliseconds
-}
-
-const sceneCake = document.getElementById('scene-cake');
-const flame = document.getElementById('flame');
-const blowText = document.getElementById('blow-text');
-
-if (cycles >= maxCycles) {
-            clearInterval(loadingInterval);
-            
-            // Hide loading screen and show the cake screen
-            sceneLoading.classList.add('hidden');
-            sceneCake.classList.remove('hidden'); 
-        }
-
-// Scene 3: Blowing out the candle
+// 4. Scene 3: Blowing out the candle
 flame.addEventListener('click', () => {
     // Hide the flame and stop the flicker
     flame.style.opacity = '0';
