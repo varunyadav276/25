@@ -140,3 +140,30 @@ button:hover {
 @keyframes fadeIn {
     to { opacity: 1; }
 }
+
+/* --- Corner Decorations --- */
+
+#peeking-cat {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120px; /* Adjust size as needed */
+    z-index: 10;
+    /* Optional: A little slide-in animation so it peeks out */
+    transform: translateY(100%);
+    animation: peekIn 1.5s ease-out forwards;
+    animation-delay: 1s; /* Waits a second before peeking */
+}
+
+@keyframes peekIn {
+    to { transform: translateY(0); }
+}
+
+#top-right-gif {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px; /* Adjust size as needed */
+    z-index: 10;
+    border-radius: 8px; /* Optional: rounds the corners of the GIF */
+}
