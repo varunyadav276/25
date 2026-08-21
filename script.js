@@ -26,7 +26,7 @@ loginBtn.addEventListener('click', () => {
 function startLoadingSequence() {
     let dotCount = 0;
     let cycles = 0;
-    const maxCycles = 3; // How many times it loops before moving to Scene 2
+    const maxCycles = 3; 
 
     const loadingInterval = setInterval(() => {
         dotCount = (dotCount + 1) % 4;
@@ -36,6 +36,17 @@ function startLoadingSequence() {
         if (dotCount === 3) {
             cycles++;
         }
+
+        // Once it finishes loading, stop the interval and trigger Scene 2
+        if (cycles >= maxCycles) {
+            clearInterval(loadingInterval);
+            
+            // This is the crucial part that hides the loading text and shows the cake!
+            sceneLoading.classList.add('hidden');
+            sceneCake.classList.remove('hidden'); 
+        }
+    }, 400); 
+}
 
         // Once it finishes loading, stop the interval and trigger Scene 2
         if (cycles >= maxCycles) {
